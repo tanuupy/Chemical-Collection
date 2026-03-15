@@ -4,6 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>ケミカルコレクション</title>
+
+  <link rel="manifest" href="./manifest.webmanifest">
+  <meta name="theme-color" content="#ffffff">
+  
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@700;900&family=Dela+Gothic+One&display=swap');
 
@@ -4647,5 +4651,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
 <div id="skill-effect-overlay"><div id="skill-effect-text" class="skill-effect-text"><div id="skill-effect-name">SKILL!</div><div id="skill-effect-desc" style="font-size:0.95rem; font-weight:700; margin-top:8px; opacity:0.96;"></div><div id="skill-effect-skip" style="font-size:0.8rem; margin-top:10px; opacity:0.85;">タップでスキップ</div></div></div>
 <div id="unlock-toast" style="position:fixed; left:50%; top:18px; transform:translateX(-50%); background:#fff8e1; color:#6d4c41; font-weight:900; padding:10px 14px; border-radius:14px; border:2px solid #fdd835; box-shadow:0 6px 18px rgba(0,0,0,0.22); display:none; z-index:8000;">使えるようになりました！</div>
+
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("./service-worker.js");
+  });
+}
+</script>
+  
 </body>
 </html>
